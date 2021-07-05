@@ -27,7 +27,7 @@ jobs:
         run: npm run build
       
       - name: Configure AWS Credentials
-        uses: chrislennon/action-aws-cli@v1.1
+        uses: shinyinc/action-aws-cli@v1.2
         with:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
