@@ -21,6 +21,9 @@ jobs:
         - run: npm install
         - run: npm run build
       
+        - name: Configure AWS Region
+          run: echo "AWS_DEFAULT_REGION=us-east-1" >> $GITHUB_ENV
+          
         - uses: shinyinc/action-aws-cli@v1.2
         - run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest
           env:
